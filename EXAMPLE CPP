@@ -1,7 +1,39 @@
 #include <iostream>
+#include <string>
 
-int main() 
-{
+class Student {
+    std::string name;
+    int age;
+
+public:
+    // Function to set student details
+    void setDetails() {
+        std::cout << "Enter student's name: ";
+        std::getline(std::cin, name);
+        
+        std::cout << "Enter student's age: ";
+        std::cin >> age;
+    }
+
+    // Function to display student details
+    void displayDetails() const {
+        std::cout << "Student's Name: " << name << std::endl;
+        std::cout << "Student's Age: " << age << std::endl;
+    }
+};
+
+int main() {
+    Student student;
+
     std::cout << "Hello, World!" << std::endl;
+
+    // Ask user to input student details
+    student.setDetails();
+
+    // Display the student details
+    std::cout << "\nDisplaying Student Details:\n";
+    student.displayDetails();
+
     return 0;
 }
+
